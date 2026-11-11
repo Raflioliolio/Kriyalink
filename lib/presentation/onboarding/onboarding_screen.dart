@@ -67,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     Text(
                       'Pilih peran kamu untuk pengalaman\nyang sesuai dengan kebutuhanmu',
                       style: theme.textTheme.bodyLarge?.copyWith(
-                        color: theme.colorScheme.onSurface.withOpacity(0.6),
+                        color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                         height: 1.5,
                       ),
                       textAlign: TextAlign.center,
@@ -109,7 +109,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Text(
                   'KriyaLink • Kolaborasi Kreatif untuk UMKM Lokal',
                   style: theme.textTheme.labelSmall?.copyWith(
-                    color: theme.colorScheme.onSurface.withOpacity(0.35),
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.35),
                   ),
                   textAlign: TextAlign.center,
                 ).animate(delay: 600.ms).fadeIn(duration: 400.ms),
@@ -167,13 +167,13 @@ class _RoleCardState extends State<_RoleCard> {
               end: Alignment.bottomRight,
               colors: [
                 widget.color,
-                widget.color.withOpacity(0.8),
+                widget.color.withValues(alpha: 0.8),
               ],
             ),
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: widget.color.withOpacity(0.35),
+                color: widget.color.withValues(alpha: 0.35),
                 blurRadius: 20,
                 offset: const Offset(0, 8),
               ),
@@ -198,7 +198,7 @@ class _RoleCardState extends State<_RoleCard> {
                     Text(
                       widget.description,
                       style: theme.textTheme.bodySmall?.copyWith(
-                        color: Colors.white.withOpacity(0.85),
+                        color: Colors.white.withValues(alpha: 0.85),
                         height: 1.4,
                       ),
                     ),
@@ -207,7 +207,7 @@ class _RoleCardState extends State<_RoleCard> {
               ),
               Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.white.withValues(alpha: 0.7),
                 size: 18,
               ),
             ],

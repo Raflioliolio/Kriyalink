@@ -14,42 +14,43 @@ final userProductsProvider =
   }
 });
 
-// Product CRUD notifier
-class ProductNotifier extends AsyncNotifier<List<ProductModel>> {
+// Product CRUD notifier — using StateNotifier for simpler family support
+class ProductNotifier extends StateNotifier<List<ProductModel>> {
   final String userId;
-  ProductNotifier(this.userId);
+  ProductNotifier(this.userId) : super([]) {
+    _load();
+  }
 
-  @override
-  Future<List<ProductModel>> build() async {
+  Future<void> _load() async {
     try {
-      return await _repo.getProductsByUser(userId);
+      final products = await _repo.getProductsByUser(userId);
+      state = products;
     } catch (_) {
-      return [];
+      state = [];
     }
   }
 
   Future<void> addProduct(ProductModel product) async {
-    final prev = state.valueOrNull ?? [];
-    state = AsyncData([...prev, product]);
+    state = [...state, product];
     try {
       await _repo.saveProduct(product);
     } catch (_) {
-      state = AsyncData(prev);
+      state = state.where((p) => p.id != product.id).toList();
     }
   }
 
   Future<void> removeProduct(String productId) async {
-    final prev = state.valueOrNull ?? [];
-    state = AsyncData(prev.where((p) => p.id != productId).toList());
+    final prev = state;
+    state = prev.where((p) => p.id != productId).toList();
     try {
       await _repo.deleteProduct(userId, productId);
     } catch (_) {
-      state = AsyncData(prev);
+      state = prev;
     }
   }
 }
 
-final productNotifierProvider = AsyncNotifierProvider.family<ProductNotifier,
-    List<ProductModel>, String>(
-  ProductNotifier.new,
+final productNotifierProvider =
+    StateNotifierProvider.family<ProductNotifier, List<ProductModel>, String>(
+  (ref, userId) => ProductNotifier(userId),
 );

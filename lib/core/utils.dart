@@ -1,15 +1,16 @@
-import 'package:intl/intl.dart' show NumberFormat, DateFormat;
-
 /// Formats an integer or double [amount] as Indonesian Rupiah.
 ///
 /// Example: `formatRupiah(1500000)` → `"Rp 1.500.000"`
 String formatRupiah(num amount) {
-  final formatter = NumberFormat.currency(
-    locale: 'id_ID',
-    symbol: 'Rp ',
-    decimalDigits: 0,
-  );
-  return formatter.format(amount);
+  final str = amount.toInt().toString();
+  final buffer = StringBuffer('Rp ');
+  final startIndex = str.length % 3;
+  if (startIndex > 0) buffer.write(str.substring(0, startIndex));
+  for (int i = startIndex; i < str.length; i += 3) {
+    if (i > 0) buffer.write('.');
+    buffer.write(str.substring(i, i + 3));
+  }
+  return buffer.toString();
 }
 
 /// Formats a [DateTime] into a human-readable Indonesian date string.

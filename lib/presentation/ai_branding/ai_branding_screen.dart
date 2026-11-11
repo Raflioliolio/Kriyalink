@@ -144,7 +144,7 @@ class _AiBrandingScreenState extends ConsumerState<AiBrandingScreen> {
     final notifier = ref.read(brandingProvider.notifier);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
         title: Row(
           children: [
@@ -197,7 +197,7 @@ class _AiBrandingScreenState extends ConsumerState<AiBrandingScreen> {
                           Text(
                             'Ceritakan produkmu, AI akan bantu buat branding yang keren!',
                             style: theme.textTheme.bodySmall?.copyWith(
-                              color: Colors.white.withOpacity(0.85),
+                              color: Colors.white.withValues(alpha: 0.85),
                             ),
                           ),
                         ],
@@ -230,8 +230,7 @@ class _AiBrandingScreenState extends ConsumerState<AiBrandingScreen> {
               const SizedBox(height: 14),
 
               // Category dropdown
-              DropdownButtonFormField<String>(
-                value: state.category,
+              DropdownButtonFormField<String>(initialValue: state.category,
                 onChanged: (v) => notifier.updateCategory(v!),
                 decoration: InputDecoration(
                   labelText: 'Kategori Produk',
@@ -248,8 +247,7 @@ class _AiBrandingScreenState extends ConsumerState<AiBrandingScreen> {
               const SizedBox(height: 14),
 
               // Target dropdown
-              DropdownButtonFormField<String>(
-                value: state.target,
+              DropdownButtonFormField<String>(initialValue: state.target,
                 onChanged: (v) => notifier.updateTarget(v!),
                 decoration: InputDecoration(
                   labelText: 'Target Pembeli',
@@ -438,7 +436,7 @@ class _ResultsSection extends StatelessWidget {
             result.productDescription,
             style: theme.textTheme.bodyMedium?.copyWith(
               height: 1.6,
-              color: theme.colorScheme.onSurface.withOpacity(0.8),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
             ),
           ),
         ).animate(delay: 200.ms).fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0),
@@ -462,7 +460,7 @@ class _ResultsSection extends StatelessWidget {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: color.withOpacity(0.4),
+                            color: color.withValues(alpha: 0.4),
                             blurRadius: 8,
                             offset: const Offset(0, 3),
                           ),
@@ -471,7 +469,7 @@ class _ResultsSection extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      '#${color.value.toRadixString(16).substring(2).toUpperCase()}',
+                      '#${color.toARGB32().toRadixString(16).substring(2).toUpperCase()}',
                       style: const TextStyle(fontSize: 9),
                     ),
                   ],
@@ -490,7 +488,7 @@ class _ResultsSection extends StatelessWidget {
             result.brandStory,
             style: theme.textTheme.bodyMedium?.copyWith(
               height: 1.6,
-              color: theme.colorScheme.onSurface.withOpacity(0.8),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
             ),
           ),
         ).animate(delay: 300.ms).fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0),
@@ -504,7 +502,7 @@ class _ResultsSection extends StatelessWidget {
             result.packagingTips,
             style: theme.textTheme.bodyMedium?.copyWith(
               height: 1.8,
-              color: theme.colorScheme.onSurface.withOpacity(0.8),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.8),
             ),
           ),
         ).animate(delay: 350.ms).fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0),
@@ -558,11 +556,11 @@ class _ResultCard extends StatelessWidget {
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: theme.colorScheme.outline.withOpacity(0.15),
+          color: theme.colorScheme.outline.withValues(alpha: 0.15),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),

@@ -79,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.15),
+                    color: Colors.white.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Text(
@@ -106,7 +106,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: CircularProgressIndicator(
                     strokeWidth: 3,
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      Colors.white.withOpacity(0.7),
+                      Colors.white.withValues(alpha: 0.7),
                     ),
                   ),
                 ).animate(delay: 700.ms).fadeIn(duration: 400.ms),

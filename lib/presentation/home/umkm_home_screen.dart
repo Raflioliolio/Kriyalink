@@ -123,7 +123,7 @@ class _UmkmHomeScreenState extends State<UmkmHomeScreen> {
     final filtered = _filteredKreators;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       body: CustomScrollView(
         slivers: [
           // AppBar
@@ -173,7 +173,7 @@ class _UmkmHomeScreenState extends State<UmkmHomeScreen> {
                           )
                         : null,
                     filled: true,
-                    fillColor: theme.colorScheme.surfaceVariant.withOpacity(0.5),
+                    fillColor: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(14),
                       borderSide: BorderSide.none,
@@ -208,7 +208,7 @@ class _UmkmHomeScreenState extends State<UmkmHomeScreen> {
                         borderRadius: BorderRadius.circular(16),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color(0xFF167D8D).withOpacity(0.3),
+                            color: const Color(0xFF167D8D).withValues(alpha: 0.3),
                             blurRadius: 16,
                             offset: const Offset(0, 6),
                           ),
@@ -232,7 +232,7 @@ class _UmkmHomeScreenState extends State<UmkmHomeScreen> {
                                 Text(
                                   'Buat branding produkmu dengan AI! ✨',
                                   style: theme.textTheme.bodySmall?.copyWith(
-                                    color: Colors.white.withOpacity(0.85),
+                                    color: Colors.white.withValues(alpha: 0.85),
                                   ),
                                 ),
                               ],
@@ -306,7 +306,7 @@ class _UmkmHomeScreenState extends State<UmkmHomeScreen> {
                     Text(
                       'Tidak ada kreator ditemukan',
                       style: theme.textTheme.titleSmall?.copyWith(
-                        color: theme.colorScheme.onSurface.withOpacity(0.6),
+                        color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                       ),
                     ),
                   ],

@@ -108,7 +108,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final user = _role == 'kreator' ? _kreatorUser : _umkmUser;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       body: CustomScrollView(
         slivers: [
           // Header
@@ -289,7 +289,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color: theme.colorScheme.outline
-                                      .withOpacity(0.3),
+                                      .withValues(alpha: 0.3),
                                   style: BorderStyle.solid,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
@@ -317,7 +317,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             imageUrl: _portfolio[i].imageUrl,
                             fit: BoxFit.cover,
                             placeholder: (_, __) => Container(
-                              color: theme.colorScheme.surfaceVariant,
+                              color: theme.colorScheme.surfaceContainerHighest,
                             ),
                           ),
                         ).animate(
@@ -378,7 +378,7 @@ class _InfoCard extends StatelessWidget {
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: theme.colorScheme.outline.withOpacity(0.15),
+          color: theme.colorScheme.outline.withValues(alpha: 0.15),
         ),
       ),
       child: Row(
@@ -400,7 +400,7 @@ class _InfoCard extends StatelessWidget {
                 Text(
                   label,
                   style: theme.textTheme.labelSmall?.copyWith(
-                    color: theme.colorScheme.onSurface.withOpacity(0.5),
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                   ),
                 ),
                 Text(
@@ -440,7 +440,7 @@ class _StatBox extends StatelessWidget {
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: theme.colorScheme.outline.withOpacity(0.15),
+          color: theme.colorScheme.outline.withValues(alpha: 0.15),
         ),
       ),
       child: Column(
@@ -456,7 +456,7 @@ class _StatBox extends StatelessWidget {
           Text(
             label,
             style: theme.textTheme.labelSmall?.copyWith(
-              color: theme.colorScheme.onSurface.withOpacity(0.5),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
             ),
           ),
         ],

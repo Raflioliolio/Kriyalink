@@ -117,7 +117,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
         title: Text(
           'Tambah Produk',
@@ -142,10 +142,10 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 child: Container(
                   height: 200,
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.surfaceVariant.withOpacity(0.5),
+                    color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: theme.colorScheme.outline.withOpacity(0.3),
+                      color: theme.colorScheme.outline.withValues(alpha: 0.3),
                       style: BorderStyle.solid,
                     ),
                   ),
@@ -176,7 +176,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                             Icon(
                               Icons.add_photo_alternate_rounded,
                               size: 56,
-                              color: theme.colorScheme.primary.withOpacity(0.5),
+                              color: theme.colorScheme.primary.withValues(alpha: 0.5),
                             ),
                             const SizedBox(height: 10),
                             Text(
@@ -190,7 +190,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                             Text(
                               'Ketuk untuk mengambil foto',
                               style: theme.textTheme.bodySmall?.copyWith(
-                                color: theme.colorScheme.onSurface.withOpacity(0.5),
+                                color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                               ),
                             ),
                           ],

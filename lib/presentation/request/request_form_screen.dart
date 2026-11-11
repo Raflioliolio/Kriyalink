@@ -138,7 +138,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
         title: Text(
           'Kirim Request',
@@ -186,7 +186,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                           'Untuk:',
                           style: theme.textTheme.labelSmall?.copyWith(
                             color: theme.colorScheme.onPrimaryContainer
-                                .withOpacity(0.6),
+                                .withValues(alpha: 0.6),
                           ),
                         ),
                         Text(
@@ -200,7 +200,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                           '📍 ${kreator.city}',
                           style: theme.textTheme.labelSmall?.copyWith(
                             color: theme.colorScheme.onPrimaryContainer
-                                .withOpacity(0.7),
+                                .withValues(alpha: 0.7),
                           ),
                         ),
                       ],
@@ -212,8 +212,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
               const SizedBox(height: 20),
 
               // Service type
-              DropdownButtonFormField<String>(
-                value: _serviceType,
+              DropdownButtonFormField<String>(initialValue: _serviceType,
                 onChanged: (v) => setState(() => _serviceType = v!),
                 decoration: InputDecoration(
                   labelText: 'Jenis Layanan',
@@ -256,8 +255,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
               const SizedBox(height: 14),
 
               // Budget range
-              DropdownButtonFormField<String>(
-                value: _budgetRange,
+              DropdownButtonFormField<String>(initialValue: _budgetRange,
                 onChanged: (v) => setState(() => _budgetRange = v!),
                 decoration: InputDecoration(
                   labelText: 'Budget',
@@ -292,7 +290,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                         Icons.calendar_month_rounded,
                         color: _deadline != null
                             ? theme.colorScheme.primary
-                            : theme.colorScheme.onSurface.withOpacity(0.5),
+                            : theme.colorScheme.onSurface.withValues(alpha: 0.5),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -305,7 +303,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                                 color: _deadline != null
                                     ? theme.colorScheme.primary
                                     : theme.colorScheme.onSurface
-                                        .withOpacity(0.6),
+                                        .withValues(alpha: 0.6),
                               ),
                             ),
                             Text(
@@ -316,7 +314,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                                 color: _deadline != null
                                     ? theme.colorScheme.onSurface
                                     : theme.colorScheme.onSurface
-                                        .withOpacity(0.5),
+                                        .withValues(alpha: 0.5),
                               ),
                             ),
                           ],
@@ -324,7 +322,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                       ),
                       Icon(
                         Icons.chevron_right_rounded,
-                        color: theme.colorScheme.onSurface.withOpacity(0.4),
+                        color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
                       ),
                     ],
                   ),
@@ -340,7 +338,7 @@ class _RequestFormScreenState extends State<RequestFormScreen> {
                   Text(
                     'Gambar Referensi (Opsional)',
                     style: theme.textTheme.labelLarge?.copyWith(
-                      color: theme.colorScheme.onSurface.withOpacity(0.7),
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                     ),
                   ),
                   const SizedBox(height: 8),

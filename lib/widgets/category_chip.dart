@@ -27,13 +27,13 @@ class CategoryChip extends StatelessWidget {
           border: Border.all(
             color: isSelected
                 ? theme.colorScheme.primary
-                : theme.colorScheme.outline.withOpacity(0.4),
+                : theme.colorScheme.outline.withValues(alpha: 0.4),
             width: 1.5,
           ),
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: theme.colorScheme.primary.withOpacity(0.3),
+                    color: theme.colorScheme.primary.withValues(alpha: 0.3),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   )
@@ -45,7 +45,7 @@ class CategoryChip extends StatelessWidget {
           style: theme.textTheme.labelMedium?.copyWith(
             color: isSelected
                 ? theme.colorScheme.onPrimary
-                : theme.colorScheme.onSurface.withOpacity(0.7),
+                : theme.colorScheme.onSurface.withValues(alpha: 0.7),
             fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
           ),
         ),

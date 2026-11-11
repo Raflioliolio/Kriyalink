@@ -35,11 +35,11 @@ class ProductCard extends StatelessWidget {
           color: theme.colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: theme.colorScheme.outline.withOpacity(0.15),
+            color: theme.colorScheme.outline.withValues(alpha: 0.15),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, 3),
             ),
@@ -89,7 +89,7 @@ class ProductCard extends StatelessWidget {
                       product.description,
                       style: theme.textTheme.bodySmall?.copyWith(
                         color:
-                            theme.colorScheme.onSurface.withOpacity(0.6),
+                            theme.colorScheme.onSurface.withValues(alpha: 0.6),
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -117,7 +117,7 @@ class ProductCard extends StatelessWidget {
       color: theme.colorScheme.secondaryContainer,
       child: Icon(
         Icons.image_rounded,
-        color: theme.colorScheme.secondary.withOpacity(0.5),
+        color: theme.colorScheme.secondary.withValues(alpha: 0.5),
         size: 36,
       ),
     );

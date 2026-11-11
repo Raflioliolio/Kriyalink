@@ -85,7 +85,7 @@ class KreatorDetailScreen extends StatelessWidget {
     final portfolio = _dummyPortfolio;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       body: CustomScrollView(
         slivers: [
           // SliverAppBar with profile header
@@ -118,7 +118,7 @@ class KreatorDetailScreen extends StatelessWidget {
                               ? CachedNetworkImageProvider(kreator.profileImage!)
                               : null,
                           backgroundColor:
-                              const Color(0xFF167D8D).withOpacity(0.3),
+                              const Color(0xFF167D8D).withValues(alpha: 0.3),
                           child: kreator.profileImage == null
                               ? Text(
                                   kreator.name[0].toUpperCase(),
@@ -240,7 +240,7 @@ class KreatorDetailScreen extends StatelessWidget {
                   Text(
                     kreator.bio,
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: theme.colorScheme.onSurface.withOpacity(0.7),
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                       height: 1.6,
                     ),
                   ).animate(delay: 150.ms).fadeIn(duration: 300.ms),
@@ -273,10 +273,10 @@ class KreatorDetailScreen extends StatelessWidget {
                           imageUrl: item.imageUrl,
                           fit: BoxFit.cover,
                           placeholder: (_, __) => Container(
-                            color: theme.colorScheme.surfaceVariant,
+                            color: theme.colorScheme.surfaceContainerHighest,
                           ),
                           errorWidget: (_, __, ___) => Container(
-                            color: theme.colorScheme.surfaceVariant,
+                            color: theme.colorScheme.surfaceContainerHighest,
                             child: Icon(Icons.image_rounded,
                                 color: theme.colorScheme.outline),
                           ),
@@ -301,7 +301,7 @@ class KreatorDetailScreen extends StatelessWidget {
           color: theme.colorScheme.surface,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: Colors.black.withValues(alpha: 0.08),
               blurRadius: 16,
               offset: const Offset(0, -4),
             ),
@@ -366,7 +366,7 @@ class _StatCard extends StatelessWidget {
           color: theme.colorScheme.surface,
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
-            color: theme.colorScheme.outline.withOpacity(0.15),
+            color: theme.colorScheme.outline.withValues(alpha: 0.15),
           ),
         ),
         child: Column(
@@ -384,7 +384,7 @@ class _StatCard extends StatelessWidget {
             Text(
               label,
               style: theme.textTheme.labelSmall?.copyWith(
-                color: theme.colorScheme.onSurface.withOpacity(0.5),
+                color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
               ),
             ),
           ],

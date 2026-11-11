@@ -82,7 +82,7 @@ class KriyaLinkTheme {
 
   // ── Component Themes ──────────────────────────────────────────────────────
 
-  static final _cardTheme = CardTheme(
+  static final _cardTheme = CardThemeData(
     elevation: 0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(kBorderRadiusCard),

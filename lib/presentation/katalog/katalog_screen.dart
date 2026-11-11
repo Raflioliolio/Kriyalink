@@ -66,7 +66,7 @@ class _KatalogScreenState extends State<KatalogScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
         title: Text(
           'Katalog Saya 📦',
@@ -120,7 +120,7 @@ class _KatalogScreenState extends State<KatalogScreen> {
                                     'dalam katalog kamu',
                                     style: theme.textTheme.bodySmall?.copyWith(
                                       color: theme.colorScheme.onPrimaryContainer
-                                          .withOpacity(0.7),
+                                          .withValues(alpha: 0.7),
                                     ),
                                   ),
                                 ],
@@ -184,14 +184,14 @@ class _KatalogScreenState extends State<KatalogScreen> {
             'Katalog masih kosong',
             style: theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w700,
-              color: theme.colorScheme.onSurface.withOpacity(0.7),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
             ),
           ).animate(delay: 200.ms).fadeIn(duration: 300.ms),
           const SizedBox(height: 8),
           Text(
             'Tambahkan produk pertamamu sekarang!',
             style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onSurface.withOpacity(0.5),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
             ),
           ).animate(delay: 300.ms).fadeIn(duration: 300.ms),
           const SizedBox(height: 24),

@@ -58,7 +58,7 @@ class KreatorHomeScreen extends StatelessWidget {
     final requests = _dummyRequests;
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
         title: Row(
           children: [
@@ -120,7 +120,7 @@ class KreatorHomeScreen extends StatelessWidget {
                               Text(
                                 '${requests.length} request menunggumu hari ini',
                                 style: theme.textTheme.bodyMedium?.copyWith(
-                                  color: Colors.white.withOpacity(0.85),
+                                  color: Colors.white.withValues(alpha: 0.85),
                                 ),
                               ),
                             ],
@@ -177,14 +177,14 @@ class KreatorHomeScreen extends StatelessWidget {
             'Belum ada request masuk',
             style: theme.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w700,
-              color: theme.colorScheme.onSurface.withOpacity(0.7),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
             ),
           ).animate(delay: 200.ms).fadeIn(duration: 300.ms),
           const SizedBox(height: 8),
           Text(
             'Request dari UMKM akan muncul di sini',
             style: theme.textTheme.bodyMedium?.copyWith(
-              color: theme.colorScheme.onSurface.withOpacity(0.5),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
             ),
           ).animate(delay: 300.ms).fadeIn(duration: 300.ms),
         ],
